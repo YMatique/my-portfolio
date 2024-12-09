@@ -14,6 +14,7 @@ module.exports = {
       fontFamily:{
         inter: ['Inter', 'sans-serif'],
         roboto: ['Roboto','sans-serif'],
+        raleway: ['Raleway','sans-serif']
       }
     },
   },
