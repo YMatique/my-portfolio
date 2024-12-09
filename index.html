@@ -4,11 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YAM - Portifólio</title>
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                primary: '#F86F03', 
+                
+              }
+            }
+          }
+        }
+      </script>
+    <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
 </head>
 <body>
     
+
+<nav class="bg-white border-gray-200 dark:bg-gray-900" style="background-color: #170550;">
+    <div class="max-w-screen-lg flex flex-wrap items-centr justify-between mx-auto p-4">
+    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">YAM dev</span>
+    </a>
+    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <!-- <button type="button" class="text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-sm text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Download CV</button> -->
+        <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+    </div>
+    <div class="items-center justify-end hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta" style="flex-grow: 1; ">
+      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100   md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0    dark:border-gray-700">
+        <li>
+          <a href="#" class="block py-2 px-3 md:p-0 text-white bg-blue-700  md:bg-transparent md:text-blue-700 md:dark:text-blue-500" aria-current="page" style="color: #F86F03;">Home</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-3 md:p-0 text-gray-900  hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white  dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Sobre Mim</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-3 md:p-0 text-gray-900  hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white  dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Serviços</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-3 md:p-0 text-gray-900  hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white  dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Skills</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-3 md:p-0 text-gray-900  hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white  dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Portifólio</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 px-3 md:p-0 text-gray-900  hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white  dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contactos</a>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+  <!-- Hero section -->
+  <section class="flex h-64" style="background-color: #31065A;">
+<h4 class="text-white">Hero Section</h4>
+  </section>
+  <!-- About section -->
+    <section class="flex flex-col h-screen p-4 md:p-8" style="background-color: #170550;">
+        <h2 class="text-2xl text-center mb-4">Sobre Mim</h2>
+        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel orci vel arcu semper bibendum. Duis fermentum, velit at convallis lobortis, arcu justo accumsan nunc, vitae eleifend odio ligula vel mauris. Sed non felis vel libero consectetur sagittis. Sed vel mi id lectus condimentum porttitor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec sollicitudin velit vel velit aliquet, vel consectetur lectus lobortis. Nulla facilisi. Donec vel nisi sed ligula efficitur dignissim.</p>
+    </section>
         
     <script type="module" src="./src/main.js"></script>
 </body>
