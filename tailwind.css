@@ -2,3 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+.nav-item{
+    @apply text-white;
+}
+.nav-item.active{
+    @apply text-primary font-semibold;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+/* .no-scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+} */
