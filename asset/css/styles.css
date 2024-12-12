@@ -571,12 +571,20 @@ video {
   margin-right: auto;
 }
 
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .mb-4 {
   margin-bottom: 1rem;
 }
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .block {
@@ -621,6 +629,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .max-w-screen-lg {
@@ -685,6 +697,18 @@ video {
   border-width: 1px;
 }
 
+.border-b {
+  border-bottom-width: 1px;
+}
+
+.border-b-8 {
+  border-bottom-width: 8px;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
 .border-gray-100 {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity, 1));
@@ -693,6 +717,16 @@ video {
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
+}
+
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
+
+.border-b-gray-200 {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
 }
 
 .bg-blue-700 {
@@ -753,6 +787,18 @@ video {
   padding-top: 4rem;
 }
 
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
+}
+
+.pt-12 {
+  padding-top: 3rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -785,6 +831,15 @@ video {
   line-height: 1.25rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -801,6 +856,26 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-primary {
+  color: #F86F03;;
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+.decoration-cyan-400 {
+  text-decoration-color: #22d3ee;
+}
+
+.decoration-black {
+  text-decoration-color: #000;
+}
+
+.underline-offset-1 {
+  text-underline-offset: 1px;
 }
 
 .transition-colors {
@@ -856,6 +931,20 @@ body::-webkit-scrollbar {
 .focus\:ring-gray-200:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity, 1));
+}
+
+@media (min-width: 640px) {
+  .sm\:w-1\/2 {
+    width: 50%;
+  }
+
+  .sm\:pr-4 {
+    padding-right: 1rem;
+  }
+
+  .sm\:pl-4 {
+    padding-left: 1rem;
+  }
 }
 
 @media (min-width: 768px) {
