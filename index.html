@@ -37,6 +37,17 @@
       transition: opacity 0.5s ease-in-out;
       pointer-events: all;
     }
+
+    .hs-overlay {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .hs-overlay.open {
+      visibility: visible;
+      opacity: 1;
+    }
   </style>
 </head>
 
@@ -538,7 +549,6 @@
           <button type="button" id="consulting"
             class="filter-btn text-gray-900 border border-white hover:border-gray-200 dark:border-gray-900 dark:bg-gray-900 dark:hover:border-gray-700 bg-white focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:text-white dark:focus:ring-gray-800">Consultoria</button>
         </div>
-
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="items-container">
           <!-- Item Web -->
           <div class="relative group hover:cursor-pointer category web" data-index="1">
@@ -653,22 +663,37 @@
           <!-- Item Web -->
           <div class="relative group hover:cursor-pointer category web" data-index="12">
             <img class="h-auto max-w-full rounded-lg"
-              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg" alt="">
+              src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg" alt="Fechamento de Projecto" data-description="Uma descrição básica deve ser incluida nesse campo">
             <div
               class="absolute inset-0 bg-blue-700 bg-opacity-50 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity">
               <i class="fa-solid fa-arrow-up-right-from-square text-white text-3xl"></i>
             </div>
           </div>
         </div>
-
-
+      </div>
+      <div id="itemModal" class="fixed inset-0 flex justify-center items-center hidden bg-gray-700 bg-opacity-50 z-10">
+        <div class="bg-white rounded-lg max-w-lg w-full relative">
+          <div class="aspect-w-16 aspect-h-8">
+            <img id="modal-image" class="w-full h-64  rounded-lg rounded-b-none mb-4  object-cover" src="" alt="">
+          </div>
+          <div class="p-4">
+            <h2 id="modal-title" class="text-2xl font-semibold mb-4"></h2>
+            <p id="modal-description" class="text-gray-700 mb-4"></p>
+          </div>
+          <div class="absolute top-2 z-[20] end-2">
+            <button type="button" class="inline-flex justify-center items-center size-8 text-sm font-semibold rounded-lg border border-transparent bg-white/10 text-white hover:bg-white/20 disabled:opacity-50 " id="close-modal">
+              <span class="sr-only">Close</span>
+              <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
 
   <script type="module" src="./src/main.js"></script>
-  <script>
+  <!-- <script>
     document.addEventListener('DOMContentLoaded', function () {
       const filterButtons = document.querySelectorAll('.filter-btn');
       const itemsContainer = document.getElementById('items-container');
@@ -710,8 +735,234 @@
       filterItems('all');
       shuffleItems();  // Embaralha os itens ao carregar a página
     });
-  </script>
+  </script> -->
 
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const itemsContainer = document.getElementById('items-container');
+      const items = Array.from(itemsContainer.children);
+      const modal = document.getElementById('item-modal');
+      const closeModalButton = document.getElementById('close-modal');
+      const modalImg = document.getElementById('modal-img');
+      const modalDescription = document.getElementById('modal-description');
+
+      // Função para aplicar o filtro
+      function filterItems(category) {
+        items.forEach(item => {
+          item.classList.add('invisible');
+        });
+
+        setTimeout(() => {
+          items.forEach(item => {
+            if (category === 'all' || item.classList.contains(category)) {
+              item.classList.remove('invisible');
+            }
+          });
+        }, 500); // Espera o tempo da animação antes de tornar visíveis novamente
+      }
+
+      // Função para abrir a modal com detalhes do item
+      function openModal(item) {
+        const imgSrc = item.querySelector('img').src;
+        const description = item.querySelector('img').alt; // Pode ser uma descrição alternativa ou texto relacionado
+        modalImg.src = imgSrc;
+        modalDescription.textContent = description;
+
+        modal.classList.remove('hidden');
+        modal.classList.add('show');
+      }
+
+      // Função para fechar a modal
+      function closeModal() {
+        modal.classList.remove('show');
+        modal.classList.add('hidden');
+      }
+
+      // Adiciona event listeners aos botões de filtro
+      filterButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+          const category = event.target.id;
+          filterItems(category);
+        });
+      });
+
+      // Adiciona event listener aos itens para abrir a modal
+      items.forEach(item => {
+        item.addEventListener('click', () => openModal(item));
+      });
+
+      // Fecha a modal quando o botão de fechar é clicado
+      closeModalButton.addEventListener('click', closeModal);
+
+      // Embaralha os itens ao carregar a página
+      shuffleItems();
+    });
+  </script> -->
+
+  <!-- <script>
+    // Captura o modal e o botão de fechar
+    const modal = document.getElementById('itemModal');
+    const closeModal = document.getElementById('close-modal');
+    
+    // Captura todos os itens
+    const itemsContainer = document.getElementById('items-container');
+    const items = Array.from(itemsContainer.getElementsByClassName('category'));
+  
+    // Função para abrir o modal e preencher os dados
+    function openModal(title, imageSrc, description) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-image').src = imageSrc;
+      document.getElementById('modal-description').textContent = description;
+      
+      modal.classList.remove('hidden');
+    }
+  
+    // Função para fechar o modal
+    closeModal.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+  
+    // Adiciona o evento de clique para cada item
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const title = item.querySelector('img').alt;  // Pode ser substituído por um título específico, se necessário
+        const imageSrc = item.querySelector('img').src;
+        const description = item.querySelector('img').getAttribute('data-description') || "Sem descrição.";
+  
+        // Abre o modal com os dados do item
+        openModal(title, imageSrc, description);
+      });
+    });
+  
+    // Função para embaralhar os itens
+    function shuffleItems() {
+      // Embaralha a ordem dos itens
+      for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        items[i].parentNode.insertBefore(items[j], items[i]);
+      }
+    }
+  
+    // Chama a função de baralhamento ao carregar a página
+    window.onload = function() {
+      shuffleItems();
+    };
+  </script> -->
+  
+  <!-- <script>
+    // Seleção de elementos
+    const modal = document.getElementById('itemModal');
+    const closeModal = document.getElementById('close-modal');
+    const itemsContainer = document.getElementById('items-container');
+    const items = Array.from(itemsContainer.getElementsByClassName('category'));
+    const buttons = document.querySelectorAll('button');
+    
+    // Função para abrir o modal e preencher os dados
+    function openModal(title, imageSrc, description) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-image').src = imageSrc;
+      document.getElementById('modal-description').textContent = description;
+      modal.classList.remove('hidden'); // Exibe o modal
+    }
+  
+    // Função para fechar o modal
+    closeModal.addEventListener('click', () => {
+      modal.classList.add('hidden'); // Esconde o modal
+    });
+  
+    // Adiciona evento de clique nos itens para abrir o modal
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const title = item.querySelector('img').alt;
+        const imageSrc = item.querySelector('img').src;
+        const description = item.querySelector('img').getAttribute('data-description') || "Sem descrição.";
+        openModal(title, imageSrc, description); // Abre o modal
+      });
+    });
+  
+    // Função para embaralhar os itens
+    function shuffleItems() {
+      for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        items[i].parentNode.insertBefore(items[j], items[i]);
+      }
+    }
+  
+    // Função de filtro de categoria
+    function filterItems(category) {
+      items.forEach(item => {
+        if (category === 'all') {
+          item.classList.remove('hidden');
+        } else {
+          if (item.classList.contains(category)) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        }
+      });
+    }
+  
+    // Adiciona a lógica de filtro nos botões
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.id; // 'all', 'web', 'mobile', 'consulting'
+        filterItems(category); // Filtra os itens
+  
+        // Atualiza o estilo ativo nos botões
+        buttons.forEach(btn => btn.classList.remove('bg-gray-300'));
+        button.classList.add('bg-gray-300');
+      });
+    });
+  
+    // Chama a função de baralhamento ao carregar a página
+    window.onload = function() {
+      shuffleItems(); // Baralha os itens ao carregar a página
+      filterItems('all'); // Exibe todos os itens inicialmente
+    };
+  </script> -->
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  // Seleciona os botões de filtro
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  
+  // Seleciona todos os itens
+  const items = document.querySelectorAll('.category');
+  
+  // Função para filtrar os itens
+  function filterItems(category) {
+    items.forEach(item => {
+      // Verifica se a categoria do item corresponde à categoria selecionada
+      if (category === 'all' || item.classList.contains(category)) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  }
+
+  // Adiciona o evento de clique para cada botão de filtro
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Pega a categoria associada ao botão
+      const category = this.id;
+      filterItems(category);
+      
+      // Altera o estilo do botão ativo (opcional)
+      filterButtons.forEach(btn => btn.classList.remove('bg-blue-700', 'text-white'));
+      this.classList.add('bg-blue-700', 'text-white');
+    });
+  });
+
+  // Exibe todos os itens ao carregar a página (caso queira exibir todos por padrão)
+  filterItems('all');
+});
+
+  </script>
+  
+  
 </body>
 
 </html>
