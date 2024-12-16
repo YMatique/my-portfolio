@@ -26,6 +26,7 @@
     href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="stylesheet" href="asset/css/animate.css">
 
   <style>
     body {
@@ -105,11 +106,11 @@
 
       <div class="flex flex-wrap">
         <div class="w-full md:w-1/2 px-4 flex flex-col justify-center mb-16 items-center md:items-start">
-          <h4 class="text-primary font-semibold text-2xl ">Olá, chamo-me</h4>
-          <h3 class="text-white text-6xl font-bold mb-4 ">Yúvi Matique</h3>
-          <p class="text-white text-2xl mb-4  font-medium"> Sou <span class="text-primary font-bold">Desenvolvedor
+          <h4 class="text-primary font-semibold text-2xl wow fadeIn" data-wow-duration=".6s" data-wow-delay=".1s">Olá, chamo-me</h4>
+          <h3 class="text-white text-6xl font-bold mb-4 wow fadeInUp" data-wow-duration=".7s" data-wow-delay=".4s">Yúvi Matique</h3>
+          <p class="text-white text-2xl mb-4  font-medium wow fadeInLeft"> Sou <span class="text-primary font-bold">Desenvolvedor
               FullStack</span></p>
-          <p class="text-wrap text-lg text-white mb-4">Desenvolvedor Fullstack apaixonado por criar <span
+          <p class="text-wrap text-lg text-white mb-4 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".5s">Desenvolvedor Fullstack apaixonado por criar <span
               class="text-primary">soluções tecnológicas inovadoras.</span></p>
 
           <div class="container mt-4">
@@ -137,10 +138,10 @@
 
   </section>
   <!-- About section -->
-  <section class="pt-16 pb-16 pl-4 pr-4" style="background-color: #170550;">
+  <section class="pt-16 pb-16 pl-4 pr-4 " style="background-color: #170550;">
     <div class="max-w-screen-lg mx-auto">
       <div class="flex flex-col  ">
-        <div class="container mx-auto text-center">
+        <div class="container mx-auto text-center wow fadeIn" data-wow-duration=".6s" data-wow-delay=".1s">
           <div class="inline-block">
             <h2 class="text-3xl font-semibold  mb-2 text-white">Sobre <span class="text-primary">Mim</span>
             </h2>
@@ -152,15 +153,15 @@
             <img src="./asset/imgs/img_web.jpg" alt="" class="w-full max-w-96 rounded-md mx-auto sm:mx-0">
           </div>
           <div class="sm:w-1/2 w-full pt-4 sm:pl-4 text-center sm:text-start">
-            <h3 class="text-2xl font-semibold text-white mb-12">Desenvolvedor FullStack</h3>
-            <p class="text-justify text-white mb-4 font-medium">Sou Engenheiro Informático formado pela Universidade
+            <h3 class="text-2xl font-semibold text-white mb-12 wow fadeInUp" data-wow-duration=".3s" data-wow-delay=".3s">Desenvolvedor FullStack</h3>
+            <p class="text-justify text-white mb-4 font-medium wow fadeInUp" data-wow-duration=".3s" data-wow-delay=".4s">Sou Engenheiro Informático formado pela Universidade
               Zambeze, com experiência em desenvolvimento de aplicações mobile, web e desktop. Tenho domínio em
               linguagens como Java, PHP, Dart, JavaScript, HTML5/CSS3 e SQL, além de frameworks modernos como Flutter,
               Laravel e Spring Boot.</p>
-            <p class="text-justify text-white mb-4 font-medium">Minha missão é criar soluções tecnológicas eficientes e
+            <p class="text-justify text-white mb-4 font-medium wow fadeInUp"data-wow-duration=".4s" data-wow-delay=".5s">Minha missão é criar soluções tecnológicas eficientes e
               centradas no usuário. Entre meus projetos estão sistemas de faturamento, aplicativos de dicionário e
               plataformas ERP híbridas.</p>
-            <p class="text-justify text-white mb-16 font-medium">Com paixão pela inovação, trabalho em equipe e
+            <p class="text-justify text-white mb-16 font-medium wow fadeInUp" data-wow-duration=".4s" data-wow-delay=".7s">Com paixão pela inovação, trabalho em equipe e
               habilidades de liderança, estou sempre em busca de transformar ideias em soluções práticas e impactantes.
             </p>
             <div class="text-start">
@@ -178,7 +179,7 @@
   <section class="pt-16 pb-16 pl-4 pr-4" style="background-color: #31065A;">
     <div class="max-w-screen-lg mx-auto">
       <div class="flex flex-col  ">
-        <div class="container mx-auto text-center">
+        <div class="container mx-auto text-center wow fadeIn"  data-wow-duration=".6s" data-wow-delay=".1s">
           <div class="inline-block">
             <h2 class="text-3xl font-semibold  mb-2 text-white ">Meus <span class="text-primary">Serviços</span>
             </h2>
@@ -693,7 +694,8 @@
 
 
   <script type="module" src="./src/main.js"></script>
-  <script>
+  <script src="asset/js/wow.min.js"></script>
+  <!-- <script>
     document.addEventListener('DOMContentLoaded', function () {
       const filterButtons = document.querySelectorAll('.filter-btn');
       const itemsContainer = document.getElementById('items-container');
@@ -735,7 +737,7 @@
       filterItems('all');
       shuffleItems();  // Embaralha os itens ao carregar a página
     });
-  </script>
+  </script> -->
 
   <!-- <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -962,6 +964,62 @@
 
   </script> -->
   
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.category');
+  const modal = document.getElementById('itemModal');
+  const modalImage = document.getElementById('modal-image');
+  const modalTitle = document.getElementById('modal-title');
+  const modalDescription = document.getElementById('modal-description');
+  const closeModal = document.getElementById('close-modal');
+
+  // Filtro de categorias
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.id; // ID do botão corresponde à categoria
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Abertura do modal
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      const imgSrc = item.querySelector('img').src;
+      const title = item.querySelector('img').alt;
+      const description = item.querySelector('img').dataset.description || 'Sem descrição disponível';
+
+      modalImage.src = imgSrc;
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+
+      modal.classList.remove('hidden');
+    });
+  });
+
+  // Fechamento do modal
+  closeModal.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+
+  // Fechar modal ao clicar fora
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
+  });
+});
+
+new WOW().init();
+
+  </script>
+
   
 </body>
 
