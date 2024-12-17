@@ -50,13 +50,16 @@
       visibility: visible;
       opacity: 1;
     }
+
     @keyframes zoomInOut {
       0% {
         transform: scale(1);
       }
+
       50% {
         transform: scale(1.2);
       }
+
       100% {
         transform: scale(1);
       }
@@ -68,8 +71,10 @@
       /* height: auto; */
       /* border-radius: 10px; */
       animation: zoomInOut 1s infinite;
-      transition: transform 0.5s ease; /* Suavização */
+      transition: transform 0.5s ease;
+      /* Suavização */
     }
+
     /* .code-container {
       background-color: #1e293b;
       color: #cbd5e1; 
@@ -103,7 +108,7 @@
         opacity: 0;
       }
     } */
-    
+
     .code-container {
       /* background-color: #1e293b; */
       color: #cbd5e1;
@@ -124,7 +129,7 @@
       font-size: 1.2rem;
       color: #F86F03;
       margin-bottom: 10px;
-      font-family: 'Raleway',;
+      font-family: 'Raleway', ;
     }
 
     .cursor {
@@ -135,25 +140,31 @@
       animation: blink 0.6s steps(2, start) infinite;
       vertical-align: bottom;
     }
+
     .keyword {
-      color: #e879f9; /* Rosa para palavras-chave */
+      color: #e879f9;
+      /* Rosa para palavras-chave */
       font-weight: bold;
     }
+
     @keyframes blink {
-      0%, 100% {
+
+      0%,
+      100% {
         opacity: 1;
       }
+
       50% {
         opacity: 0;
       }
     }
+
     .grid-background {
       background-size: 30px 30px;
       background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-                        opacity: .3;
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+      opacity: .5;
     }
-
   </style>
 </head>
 
@@ -205,29 +216,35 @@
     </div>
   </nav>
   <!-- Hero section -->
-  <section class="pt-16 pb-16 pl-4 pr-4 md:h-screen  bg-gradient-to-br from-[#31065A] via-[#5B0B7A] to-[#2C0349] overflow-hidden" >
+  <section
+    class="pt-16 pb-16 pl-4 pr-4 md:h-screen  bg-gradient-to-br from-[#31065A] via-[#5B0B7A] to-[#2C0349] overflow-hidden">
     <!-- <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
     <div class="absolute inset-0 bg-gradient-radial from-purple-700 via-transparent to-transparent blur-3xl"></div> -->
-  <!-- Fundo com grid -->
-  <div class="absolute inset-0 grid-background  "></div>
+    <!-- Fundo com grid -->
+    <div
+      class="absolute inset-0 bg-radial-custom  opacity-30 blur-lg w-72  h-72 border rounded-full animate-pulse top-1/2 left-1/3 ">
+    </div>
+    <div class="absolute inset-0 grid-background"></div>
 
-  <!-- Fundo com blur de cores -->
-  <div class="absolute inset-0 bg-gradient-to-br from-purple-700/50 via-transparent to-transparent blur-2xl "></div>
+    <!-- Fundo com blur de cores -->
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-700/50 via-transparent to-transparent blur-2xl "></div>
 
 
-    <div class="max-w-screen-lg mx-auto h-full z-10 relative" >
+    <div class="max-w-screen-lg mx-auto h-full z-10 relative">
       <!-- <h4 class="text-white text-3xl font-inter">Hero Section</h4> -->
 
-      <div class="flex flex-wrap h-full ">
-        <div class="w-full md:w-1/2 px-4 py-4 flex flex-col justify-center mb-16 items-center md:items-start">
-          <h4 class="text-primary font-semibold text-2xl wow fadeIn mb-4" data-wow-duration=".6s" data-wow-delay=".1s" data-aos="fade-up">Olá,
+      <div class="flex flex-wrap h-full  relative">
+        <div class="w-full md:w-1/2 px-4 py-4 flex flex-col justify-center mb-16 items-center md:items-start z-10">
+          <h4 class="text-primary font-semibold text-2xl wow fadeIn mb-4" data-wow-duration=".6s" data-wow-delay=".1s"
+            data-aos="fade-up">Olá,
             chamo-me</h4>
-          <h3 class="text-white text-6xl font-bold mb-4 wow fadeInUp" data-wow-duration=".7s" data-wow-delay=".4s">Yúvi
+          <h3 class="text-white text-6xl font-bold mb-4 wow fadeInUp " data-wow-duration=".7s" data-wow-delay=".4s">Yúvi
             Matique</h3>
           <p class="text-white text-2xl mb-4  font-medium wow fadeInLeft"> Sou <span
               class="text-primary font-bold">Desenvolvedor
               FullStack</span></p>
-          <p class="text-wrap text-lg text-white mb-4 wow fadeInUp text-center md:text-start" data-wow-duration=".5s" data-wow-delay=".5s">
+          <p class="text-wrap text-lg text-white mb-4 wow fadeInUp text-center md:text-start" data-wow-duration=".5s"
+            data-wow-delay=".5s">
             Desenvolvedor Fullstack apaixonado por criar <span class="text-primary">soluções tecnológicas
               inovadoras.</span></p>
 
@@ -244,15 +261,24 @@
             </div>
             <div class="flex">
               <a href=""
-              class=" w-auto animate-pulse transition-colors duration-200 mx-auto md:mx-0 text-white pl-8 pr-8 pt-3 pb-3 font-semibold bg-primary hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full mt-4">Download
-              CV</a>
+                class=" w-auto animate-pulse transition-colors duration-200 mx-auto md:mx-0 text-white pl-8 pr-8 pt-3 pb-3 font-semibold bg-primary hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full mt-4">Download
+                CV</a>
             </div>
           </div>
         </div>
         <div class="w-full md:w-1/2 my-auto">
           <div class="relative z-10 p-6 bg-gray-900 bg-opacity-50 rounded-xl shadow-2xl max-w-lg text-white">
+            <div class="flex-none border-b border-slate-500/30">
+              <div class="flex items-center h-8 space-x-1.5 px-3">
+                <div class="w-2.5 h-2.5 bg-slate-600 rounded-full"></div>
+                <div class="w-2.5 h-2.5 bg-slate-600 rounded-full"></div>
+                <div class="w-2.5 h-2.5 bg-slate-600 rounded-full"></div>
+              </div>
+            </div>
+            <div class="mb-4 "></div>
             <div id="language" class="text-lg font-bold text-cyan-400 mb-4"></div>
-            <pre id="code" class="font-mono text-base"></pre><span class="cursor bg-cyan-400 w-[8px] h-5 inline-block align-bottom"></span>
+            <pre id="code" class="font-mono text-base"></pre><span
+              class="cursor bg-cyan-400 w-[8px] h-5 inline-block align-bottom"></span>
           </div>
           <!-- <div class="code-container relative h-full">
             <div class="language" id="language"></div>
@@ -266,7 +292,7 @@
 
   </section>
   <!-- About section -->
-  <section class="pt-16 pb-16 pl-4 pr-4 " style="background-color: #170550;" >
+  <section class="pt-16 pb-16 pl-4 pr-4 " style="background-color: #170550;">
     <div class="max-w-screen-lg mx-auto">
       <div class="flex flex-col  " data-aos="fade-up">
         <div class="container mx-auto text-center wow fadeIn" data-wow-duration=".6s" data-wow-delay=".1s">
@@ -308,7 +334,8 @@
   </section>
 
   <!-- Services section -->
-  <section class="pt-16 pb-16 pl-4 pr-4" style="background-color: #31065A;">
+  <section class="pt-16 pb-16 pl-4 pr-4 relative" style="background-color: #31065A;">
+    <div class="absolute inset-0 grid-background"></div>
     <div class="max-w-screen-lg mx-auto">
       <div class="flex flex-col  " data-aos="fade-up">
         <div class="container mx-auto text-center wow fadeIn" data-wow-duration=".6s" data-wow-delay=".2s">
@@ -319,7 +346,8 @@
           </div>
         </div>
         <div class="flex flex-wrap pt-16 -px-4 ">
-          <div class="md:w-1/3 sm:w-1/2 w-full max-w-96 mx-auto px-4 mt-8 wow fadeInUp" data-wow-duration=".6s" data-wow-delay=".3s">
+          <div class="md:w-1/3 sm:w-1/2 w-full max-w-96 mx-auto px-4 mt-8 wow fadeInUp" data-wow-duration=".6s"
+            data-wow-delay=".3s">
             <div class="bg-white p-8 rounded-md mx-auto flex flex-col items-center">
               <div class="mb-10">
                 <span><i class="fa-solid fa-laptop-code text-7xl text-primary"></i></span>
@@ -329,7 +357,8 @@
                 utilizando tecnologias para proporcionar experiências excepcionais aos usuários.</p>
             </div>
           </div>
-          <div class="md:w-1/3 sm:w-1/2 w-full max-w-96 mx-auto px-4 mt-8 wow fadeInUp" data-wow-duration=".6s" data-wow-delay=".4s">
+          <div class="md:w-1/3 sm:w-1/2 w-full max-w-96 mx-auto px-4 mt-8 wow fadeInUp" data-wow-duration=".6s"
+            data-wow-delay=".4s">
             <div class="bg-white p-8 rounded-md mx-auto flex flex-col items-center">
               <div class="mb-10">
                 <span><i class="fa-solid fa-mobile-screen-button text-7xl text-primary"></i></span>
@@ -339,7 +368,8 @@
                 focando na performance e usabilidade em dispositivos iOS e Android.</p>
             </div>
           </div>
-          <div class="md:w-1/3 sm:w-1/2 w-full max-w-96 sm:mx-0 mx-auto   px-4 mt-8 wow fadeInUp" data-wow-duration=".6s" data-wow-delay=".5s">
+          <div class="md:w-1/3 sm:w-1/2 w-full max-w-96 sm:mx-0 mx-auto   px-4 mt-8 wow fadeInUp"
+            data-wow-duration=".6s" data-wow-delay=".5s">
             <div class="bg-white p-8 rounded-md mx-auto flex flex-col items-center">
               <div class="mb-10">
                 <span><i class="fa-solid fa-headset text-7xl text-primary"></i></span>
@@ -832,181 +862,200 @@
   </section>
 
   <!-- Contact -->
-<div style="background-color: #170550;">
-  <div class="max-w-5xl px-4 xl:px-0 py-10 lg:py-20 mx-auto" data-aos="fade-up">
-    <div class="container mx-auto text-center mb-10 wow fadeIn" data-wow-duration=".6s" data-wow-delay=".2s">
-      <div class="inline-block">
-        <h2 class="text-3xl font-semibold  mb-2 text-white ">Contacto <span class="text-primary"></span>
-        </h2>
-        <div class=" bg-gray-300 border-gray-300 h-[2px]"></div>
+  <div style="background-color: #170550;">
+    <div class="max-w-5xl px-4 xl:px-0 py-10 lg:py-20 mx-auto" data-aos="fade-up">
+      <div class="container mx-auto text-center mb-10 wow fadeIn" data-wow-duration=".6s" data-wow-delay=".2s">
+        <div class="inline-block">
+          <h2 class="text-3xl font-semibold  mb-2 text-white ">Contacto <span class="text-primary"></span>
+          </h2>
+          <div class=" bg-gray-300 border-gray-300 h-[2px]"></div>
+        </div>
       </div>
-    </div>
-    <!-- Title -->
-    <!-- <div class="max-w-3xl mb-10 lg:mb-14">
+      <!-- Title -->
+      <!-- <div class="max-w-3xl mb-10 lg:mb-14">
       <h2 class="text-white font-semibold text-2xl md:text-4xl md:leading-tight">Contact us</h2>
       <p class="mt-1 text-neutral-400">Whatever your goal - we will get you there.</p>
     </div> -->
-    <!-- End Title -->
+      <!-- End Title -->
 
-    <!-- Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16">
-      <div class="md:order-2 border-b border-neutral-800 pb-10 mb-10 md:border-b-0 md:pb-0 md:mb-0">
-        <form>
-          <div class="space-y-4">
-            <!-- Input -->
-            <div class="relative">
-              <input type="text" id="hs-tac-input-name" class="peer p-4 block w-full bg-white border-transparent rounded-lg text-sm text-gray-900 placeholder:text-transparent focus:outline-none focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
+      <!-- Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16">
+        <div class="md:order-2 border-b border-neutral-800 pb-10 mb-10 md:border-b-0 md:pb-0 md:mb-0">
+          <form>
+            <div class="space-y-4">
+              <!-- Input -->
+              <div class="relative">
+                <input type="text" id="hs-tac-input-name" class="peer p-4 block w-full bg-white border-transparent rounded-lg text-sm text-gray-900 placeholder:text-transparent focus:outline-none focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
               focus:pt-6
               focus:pb-2
               [&:not(:placeholder-shown)]:pt-6
               [&:not(:placeholder-shown)]:pb-2
               autofill:pt-6
               autofill:pb-2" placeholder="Nome">
-              <label for="hs-tac-input-name" class="absolute top-0 start-0 p-4 h-full text-gray-900 text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                <label for="hs-tac-input-name" class="absolute top-0 start-0 p-4 h-full text-gray-900 text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent peer-disabled:opacity-50 peer-disabled:pointer-events-none
               peer-focus:text-xs
               peer-focus:-translate-y-1.5
               peer-focus:text-gray-900
               peer-[:not(:placeholder-shown)]:text-xs
               peer-[:not(:placeholder-shown)]:-translate-y-1.5
               peer-[:not(:placeholder-shown)]:text-gray-900">Nome</label>
-            </div>
-            <!-- End Input -->
+              </div>
+              <!-- End Input -->
 
-            <!-- Input -->
-            <div class="relative">
-              <input type="email" id="hs-tac-input-email" class="peer p-4 block w-full bg-white border-transparent rounded-lg text-sm text-gray-900 placeholder:text-transparent focus:outline-none focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
+              <!-- Input -->
+              <div class="relative">
+                <input type="email" id="hs-tac-input-email" class="peer p-4 block w-full bg-white border-transparent rounded-lg text-sm text-gray-900 placeholder:text-transparent focus:outline-none focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
               focus:pt-6
               focus:pb-2
               [&:not(:placeholder-shown)]:pt-6
               [&:not(:placeholder-shown)]:pb-2
               autofill:pt-6
               autofill:pb-2" placeholder="Email">
-              <label for="hs-tac-input-email" class="absolute top-0 start-0 p-4 h-full text-gray-900 text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                <label for="hs-tac-input-email" class="absolute top-0 start-0 p-4 h-full text-gray-900 text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent peer-disabled:opacity-50 peer-disabled:pointer-events-none
               peer-focus:text-xs
               peer-focus:-translate-y-1.5
               peer-focus:text-gray-900
               peer-[:not(:placeholder-shown)]:text-xs
               peer-[:not(:placeholder-shown)]:-translate-y-1.5
               peer-[:not(:placeholder-shown)]:text-gray-900">Email</label>
-            </div>
-            <!-- End Input -->
+              </div>
+              <!-- End Input -->
 
-           
 
-            <!-- Input -->
-            <div class="relative">
-              <input type="text" id="hs-tac-input-phone" class="peer p-4 block w-full bg-white border-transparent rounded-lg text-sm text-gray-900 placeholder:text-transparent focus:outline-none focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
+
+              <!-- Input -->
+              <div class="relative">
+                <input type="text" id="hs-tac-input-phone" class="peer p-4 block w-full bg-white border-transparent rounded-lg text-sm text-gray-900 placeholder:text-transparent focus:outline-none focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
               focus:pt-6
               focus:pb-2
               [&:not(:placeholder-shown)]:pt-6
               [&:not(:placeholder-shown)]:pb-2
               autofill:pt-6
               autofill:pb-2" placeholder="Phone">
-              <label for="hs-tac-input-phone" class="absolute top-0 start-0 p-4 h-full text-gray-900 text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                <label for="hs-tac-input-phone" class="absolute top-0 start-0 p-4 h-full text-gray-900 text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent peer-disabled:opacity-50 peer-disabled:pointer-events-none
                 peer-focus:text-xs
                 peer-focus:-translate-y-1.5
                 peer-focus:text-gray-900
                 peer-[:not(:placeholder-shown)]:text-xs
                 peer-[:not(:placeholder-shown)]:-translate-y-1.5
                 peer-[:not(:placeholder-shown)]:text-gray-900">Telefone</label>
-            </div>
-            <!-- End Input -->
+              </div>
+              <!-- End Input -->
 
-            <!-- Textarea -->
-            <div class="relative">
-              <textarea id="hs-tac-message" class="peer p-4 block w-full bg-white border-transparent rounded-lg text-sm text-gray-900 placeholder:text-transparent focus:outline-none focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
+              <!-- Textarea -->
+              <div class="relative">
+                <textarea id="hs-tac-message" class="peer p-4 block w-full bg-white border-transparent rounded-lg text-sm text-gray-900 placeholder:text-transparent focus:outline-none focus:ring-0 focus:border-transparent disabled:opacity-50 disabled:pointer-events-none
               focus:pt-6
               focus:pb-2
               [&amp;:not(:placeholder-shown)]:pt-6
               [&amp;:not(:placeholder-shown)]:pb-2
               autofill:pt-6
               autofill:pb-2" placeholder="Mensagem" data-hs-textarea-auto-height="" style="height: 120px;"></textarea>
-              <label for="hs-tac-message" class="absolute top-0 start-0 p-4 h-full text-gray-900 text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent peer-disabled:opacity-50 peer-disabled:pointer-events-none
+                <label for="hs-tac-message" class="absolute top-0 start-0 p-4 h-full text-gray-900 text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent peer-disabled:opacity-50 peer-disabled:pointer-events-none
                 peer-focus:text-xs
                 peer-focus:-translate-y-1.5
                 peer-focus:text-gray-900
                 peer-[:not(:placeholder-shown)]:text-xs
                 peer-[:not(:placeholder-shown)]:-translate-y-1.5
                 peer-[:not(:placeholder-shown)]:text-gray-900">Deixe ficar sua mensagem!</label>
+              </div>
+              <!-- End Textarea -->
             </div>
-            <!-- End Textarea -->
+
+            <div class="mt-2">
+              <p class="text-xs text-gray-200">
+                Todos campos são obrigatórios
+              </p>
+
+              <p class="mt-5">
+                <a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-primary font-semibold text-sm text-white  rounded-full focus:outline-none"
+                  href="#">
+                  Submeter
+                  <svg
+                    class="shrink-0 size-4 transition group-hover:translate-x-0.5 group-hover:translate-x-0 group-focus:translate-x-0.5 group-focus:translate-x-0"
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+              </p>
+            </div>
+          </form>
+        </div>
+        <!-- End Col -->
+
+        <div class="space-y-14">
+          <!-- Item -->
+          <div class="flex gap-x-5">
+            <svg class="shrink-0 size-6 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <div class="grow">
+              <h4 class="text-white font-semibold">Localização</h4>
+
+              <address class="mt-1 text-neutral-400 text-sm not-italic">
+                6 Bairro - Esturro, Massamba<br>
+                Beira, Sofala, Moçambique
+              </address>
+            </div>
           </div>
+          <!-- End Item -->
 
-          <div class="mt-2">
-            <p class="text-xs text-gray-200">
-              Todos campos são obrigatórios
-            </p>
+          <!-- Item -->
+          <div class="flex gap-x-5">
+            <svg class="shrink-0 size-6 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z" />
+              <path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10" />
+            </svg>
+            <div class="grow">
+              <h4 class="text-white font-semibold">Email</h4>
 
-            <p class="mt-5">
-              <a class="group inline-flex items-center gap-x-2 py-2 px-3 bg-primary font-semibold text-sm text-white  rounded-full focus:outline-none" href="#">
-                Submeter
-                <svg class="shrink-0 size-4 transition group-hover:translate-x-0.5 group-hover:translate-x-0 group-focus:translate-x-0.5 group-focus:translate-x-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              <a class="mt-1 text-neutral-400 text-sm hover:text-neutral-200 focus:outline-none focus:text-neutral-200"
+                href="#mailto:example@site.co" target="_blank">
+                yuvimatique@gmail.com
               </a>
-            </p>
+            </div>
           </div>
-        </form>
-      </div>
-      <!-- End Col -->
+          <!-- End Item -->
 
-      <div class="space-y-14">
-        <!-- Item -->
-        <div class="flex gap-x-5">
-          <svg class="shrink-0 size-6 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div class="grow">
-            <h4 class="text-white font-semibold">Localização</h4>
-
-            <address class="mt-1 text-neutral-400 text-sm not-italic">
-              6 Bairro - Esturro, Massamba<br>
-              Beira, Sofala, Moçambique
-            </address>
-          </div>
-        </div>
-        <!-- End Item -->
-
-        <!-- Item -->
-        <div class="flex gap-x-5">
-          <svg class="shrink-0 size-6 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z"/><path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"/></svg>
-          <div class="grow">
-            <h4 class="text-white font-semibold">Email</h4>
-
-            <a class="mt-1 text-neutral-400 text-sm hover:text-neutral-200 focus:outline-none focus:text-neutral-200" href="#mailto:example@site.co" target="_blank">
-              yuvimatique@gmail.com
-            </a>
-          </div>
-        </div>
-        <!-- End Item -->
-
-        <!-- Item -->
-        <div class="flex gap-x-5">
-          <svg class="shrink-0 size-6 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
-          <div class="grow">
-            <h4 class="text-white font-semibold">Contribuições</h4>
-            <p class="mt-1 text-neutral-400">Estou aberto em contribuir em projectos criativos, inovadores e sustentáveis.</p>
-            <p class="mt-2">
-              <!-- <a class="group inline-flex items-center gap-x-2 font-medium text-sm text-[#ff0] decoration-2 hover:underline focus:outline-none focus:underline" href="#">
+          <!-- Item -->
+          <div class="flex gap-x-5">
+            <svg class="shrink-0 size-6 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="m3 11 18-5v12L3 14v-3z" />
+              <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
+            </svg>
+            <div class="grow">
+              <h4 class="text-white font-semibold">Contribuições</h4>
+              <p class="mt-1 text-neutral-400">Estou aberto em contribuir em projectos criativos, inovadores e
+                sustentáveis.</p>
+              <p class="mt-2">
+                <!-- <a class="group inline-flex items-center gap-x-2 font-medium text-sm text-[#ff0] decoration-2 hover:underline focus:outline-none focus:underline" href="#">
                 Job openings
                 <svg class="shrink-0 size-4 transition group-hover:translate-x-0.5 group-hover:translate-x-0 group-focus:translate-x-0.5 group-focus:translate-x-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a> -->
-            </p>
+              </p>
+            </div>
           </div>
+          <!-- End Item -->
         </div>
-        <!-- End Item -->
+        <!-- End Col -->
       </div>
-      <!-- End Col -->
+      <!-- End Grid -->
     </div>
-    <!-- End Grid -->
   </div>
-</div>
-<!-- End Contact -->
+  <!-- End Contact -->
+  <script>
 
-<div class="code-container">
-  <div class="language" id="language"></div>
-  <div id="code"></div><span class="cursor"></span>
-</div>
-
-<script>
-  
-  const codeSnippets = [
+    const codeSnippets = [
       {
         language: "PHP",
         code: [
@@ -1086,84 +1135,84 @@
 
     // Inicia o efeito
     typeCode();
-</script>
+  </script>
   <script type="module" src="./src/main.js"></script>
   <script src="asset/js/wow.min.js"></script>
   <script src="./asset/js/aos.js"></script>
 
   <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const items = document.querySelectorAll('.category');
-  const modal = document.getElementById('itemModal');
-  const modalImage = document.getElementById('modal-image');
-  const modalTitle = document.getElementById('modal-title');
-  const modalDescription = document.getElementById('modal-description');
-  const closeModal = document.getElementById('close-modal');
+    document.addEventListener('DOMContentLoaded', function () {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const items = document.querySelectorAll('.category');
+      const modal = document.getElementById('itemModal');
+      const modalImage = document.getElementById('modal-image');
+      const modalTitle = document.getElementById('modal-title');
+      const modalDescription = document.getElementById('modal-description');
+      const closeModal = document.getElementById('close-modal');
 
-  // Função para ativar o botão
-  function activateButton(button) {
-    // Remover classes ativas de todos os botões
-    filterButtons.forEach(btn => {
-      btn.classList.remove('bg-primary', 'text-white');
-      btn.classList.add('bg-white', 'text-gray-900');
-    });
+      // Função para ativar o botão
+      function activateButton(button) {
+        // Remover classes ativas de todos os botões
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-primary', 'text-white');
+          btn.classList.add('bg-white', 'text-gray-900');
+        });
 
-    // Adicionar classes ao botão ativo
-    button.classList.add('bg-primary', 'text-white');
-    button.classList.remove('bg-white', 'text-gray-900');
-  }
+        // Adicionar classes ao botão ativo
+        button.classList.add('bg-primary', 'text-white');
+        button.classList.remove('bg-white', 'text-gray-900');
+      }
 
-  // Filtro de categorias
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const category = button.id; // ID do botão corresponde à categoria
-      activateButton(button); // Ativar botão clicado
+      // Filtro de categorias
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const category = button.id; // ID do botão corresponde à categoria
+          activateButton(button); // Ativar botão clicado
+          items.forEach(item => {
+            if (category === 'all' || item.classList.contains(category)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Abertura do modal
       items.forEach(item => {
-        if (category === 'all' || item.classList.contains(category)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
+        item.addEventListener('click', () => {
+          const imgSrc = item.querySelector('img').src;
+          const title = item.querySelector('img').alt;
+          const description = item.querySelector('img').dataset.description || 'Sem descrição disponível';
+
+          modalImage.src = imgSrc;
+          modalTitle.textContent = title;
+          modalDescription.textContent = description;
+
+          modal.classList.remove('hidden');
+        });
+      });
+
+      // Fechamento do modal
+      closeModal.addEventListener('click', () => {
+        modal.classList.add('hidden');
+      });
+
+      // Fechar modal ao clicar fora
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
         }
       });
+
+      // Ativar botão "Todas Categorias" e exibir todos os itens no carregamento
+      const allButton = document.getElementById('all');
+      if (allButton) {
+        activateButton(allButton);
+        items.forEach(item => (item.style.display = 'block'));
+      }
     });
-  });
-
-  // Abertura do modal
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      const imgSrc = item.querySelector('img').src;
-      const title = item.querySelector('img').alt;
-      const description = item.querySelector('img').dataset.description || 'Sem descrição disponível';
-
-      modalImage.src = imgSrc;
-      modalTitle.textContent = title;
-      modalDescription.textContent = description;
-
-      modal.classList.remove('hidden');
-    });
-  });
-
-  // Fechamento do modal
-  closeModal.addEventListener('click', () => {
-    modal.classList.add('hidden');
-  });
-
-  // Fechar modal ao clicar fora
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.add('hidden');
-    }
-  });
-
-  // Ativar botão "Todas Categorias" e exibir todos os itens no carregamento
-  const allButton = document.getElementById('all');
-  if (allButton) {
-    activateButton(allButton);
-    items.forEach(item => (item.style.display = 'block'));
-  }
-});
-   new WOW().init();
+    new WOW().init();
     AOS.init();
 
   </script>

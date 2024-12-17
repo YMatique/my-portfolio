@@ -11,6 +11,9 @@ module.exports = {
         secondary: '#ffcc00',
         
       },
+      backgroundImage: {
+        'radial-custom': 'radial-gradient(circle , #ff6ec7, #5b0b7a, #2c0349)',
+      },
       fontFamily:{
         inter: ['Inter', 'sans-serif'],
         roboto: ['Roboto','sans-serif'],
