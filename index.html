@@ -50,13 +50,117 @@
       visibility: visible;
       opacity: 1;
     }
+    @keyframes zoomInOut {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Estilização da Imagem */
+    .animated-image {
+      /* width: 300px; */
+      /* height: auto; */
+      /* border-radius: 10px; */
+      animation: zoomInOut 1s infinite;
+      transition: transform 0.5s ease; /* Suavização */
+    }
+    /* .code-container {
+      background-color: #1e293b;
+      color: #cbd5e1; 
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1rem;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 50px auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      white-space: pre-wrap; 
+      overflow: hidden; 
+    } */
+
+    /* Cursor de digitação */
+    /* .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 1rem;
+      background-color: #22d3ee; 
+      animation: blink 0.6s steps(2, start) infinite;
+      vertical-align: bottom;
+    } */
+
+    /* Animação do cursor piscando */
+    /* @keyframes blink {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    } */
+    
+    .code-container {
+      /* background-color: #1e293b; */
+      color: #cbd5e1;
+      padding: 20px;
+      font-family: 'Courier New', Courier, monospace;
+      border-radius: 10px;
+      /* max-width: 600px; */
+      /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); */
+      white-space: pre-wrap;
+      overflow: hidden;
+      margin-left: auto;
+      margin-right: auto;
+      min-height: 450px;
+    }
+
+    .language {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #F86F03;
+      margin-bottom: 10px;
+      font-family: 'Raleway',;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1rem;
+      background-color: #F86F03;
+      animation: blink 0.6s steps(2, start) infinite;
+      vertical-align: bottom;
+    }
+    .keyword {
+      color: #e879f9; /* Rosa para palavras-chave */
+      font-weight: bold;
+    }
+    @keyframes blink {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    }
+    .grid-background {
+      background-size: 30px 30px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+                        opacity: .3;
+    }
+
   </style>
 </head>
 
 <body>
 
 
-  <nav class="bg-white border-gray-200 dark:bg-gray-900" style="background-color: #170550;">
+  <nav class="bg-white border-gray-200 w-full fixed z-10 dark:bg-gray-900" style="background-color: #170550;">
     <div class="max-w-screen-lg flex flex-wrap items-centr justify-between mx-auto p-4">
       <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">YAM dev</span>
@@ -101,25 +205,34 @@
     </div>
   </nav>
   <!-- Hero section -->
-  <section class="pt-16 pb-16 pl-4 pr-4 md:min-h-screen" style="background-color: #31065A;">
-    <div class="max-w-screen-lg mx-auto " >
+  <section class="pt-16 pb-16 pl-4 pr-4 md:h-screen  bg-gradient-to-br from-[#31065A] via-[#5B0B7A] to-[#2C0349] overflow-hidden" >
+    <!-- <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+    <div class="absolute inset-0 bg-gradient-radial from-purple-700 via-transparent to-transparent blur-3xl"></div> -->
+  <!-- Fundo com grid -->
+  <div class="absolute inset-0 grid-background  "></div>
+
+  <!-- Fundo com blur de cores -->
+  <div class="absolute inset-0 bg-gradient-to-br from-purple-700/50 via-transparent to-transparent blur-2xl "></div>
+
+
+    <div class="max-w-screen-lg mx-auto h-full z-10 relative" >
       <!-- <h4 class="text-white text-3xl font-inter">Hero Section</h4> -->
 
-      <div class="flex flex-wrap">
-        <div class="w-full md:w-1/2 px-4 flex flex-col justify-center mb-16 items-center md:items-start">
-          <h4 class="text-primary font-semibold text-2xl wow fadeIn" data-wow-duration=".6s" data-wow-delay=".1s" data-aos="fade-up">Olá,
+      <div class="flex flex-wrap h-full ">
+        <div class="w-full md:w-1/2 px-4 py-4 flex flex-col justify-center mb-16 items-center md:items-start">
+          <h4 class="text-primary font-semibold text-2xl wow fadeIn mb-4" data-wow-duration=".6s" data-wow-delay=".1s" data-aos="fade-up">Olá,
             chamo-me</h4>
           <h3 class="text-white text-6xl font-bold mb-4 wow fadeInUp" data-wow-duration=".7s" data-wow-delay=".4s">Yúvi
             Matique</h3>
           <p class="text-white text-2xl mb-4  font-medium wow fadeInLeft"> Sou <span
               class="text-primary font-bold">Desenvolvedor
               FullStack</span></p>
-          <p class="text-wrap text-lg text-white mb-4 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".5s">
+          <p class="text-wrap text-lg text-white mb-4 wow fadeInUp text-center md:text-start" data-wow-duration=".5s" data-wow-delay=".5s">
             Desenvolvedor Fullstack apaixonado por criar <span class="text-primary">soluções tecnológicas
               inovadoras.</span></p>
 
-          <div class="container mt-4">
-            <div class="flex pt-4 mb-4 pb-6 gap-4">
+          <div class="container mt-4 ">
+            <div class="flex pt-4 mb-4 pb-6 gap-4 justify-center md:justify-start">
               <a href="" class=""><span class=" text-gray-100 text-xl"><i
                     class="fa-brands fa-facebook p-2 border rounded-full"></i></span></a>
               <a href="" class=""><span class=" text-gray-100 text-xl"><i
@@ -129,13 +242,23 @@
               <a href="" class=""><span class=" text-gray-100 text-xl"><i
                     class="fa-brands fa-instagram p-2 border rounded-full"></i></span></a>
             </div>
-            <a href="#"
-              class=" w-auto text-white pl-8 pr-8 pt-3 pb-3 font-semibold bg-primary hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full mt-4">Download
+            <div class="flex">
+              <a href=""
+              class=" w-auto animate-pulse transition-colors duration-200 mx-auto md:mx-0 text-white pl-8 pr-8 pt-3 pb-3 font-semibold bg-primary hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full mt-4">Download
               CV</a>
+            </div>
           </div>
         </div>
-        <div class="w-full md:w-1/2 ">
-          <img src="./asset/imgs/hero.png" alt="Hero" class="md:w-full md:h-full md:block hidden object-cover">
+        <div class="w-full md:w-1/2 my-auto">
+          <div class="relative z-10 p-6 bg-gray-900 bg-opacity-50 rounded-xl shadow-2xl max-w-lg text-white">
+            <div id="language" class="text-lg font-bold text-cyan-400 mb-4"></div>
+            <pre id="code" class="font-mono text-base"></pre><span class="cursor bg-cyan-400 w-[8px] h-5 inline-block align-bottom"></span>
+          </div>
+          <!-- <div class="code-container relative h-full">
+            <div class="language" id="language"></div>
+            <div id="code"></div><span class="cursor"></span>
+          </div> -->
+          <!-- <img src="./asset/imgs/hero.png" alt="Hero" class="animated-image md:w-full md:block hidden object-cover"> -->
         </div>
       </div>
 
@@ -876,66 +999,171 @@
 </div>
 <!-- End Contact -->
 
+<div class="code-container">
+  <div class="language" id="language"></div>
+  <div id="code"></div><span class="cursor"></span>
+</div>
 
+<script>
+  
+  const codeSnippets = [
+      {
+        language: "PHP",
+        code: [
+          { text: "// Exibe uma mensagem", class: "text-green-500 italic" },
+          { text: "<?php", class: "text-blue-400 font-bold" },
+          { text: "echo", class: "text-yellow-300 font-bold" },
+          { text: `"Hello, PHP!";`, class: "text-red-400" },
+          { text: "?>", class: "text-blue-400 font-bold" }
+        ]
+      },
+      {
+        language: "JavaScript",
+        code: [
+          { text: "// Log no console", class: "text-green-500 italic" },
+          { text: "console.log", class: "text-yellow-300 font-bold" },
+          { text: `("Hello, JavaScript!");`, class: "text-red-400" }
+        ]
+      },
+      {
+        language: "Java",
+        code: [
+          { text: "public", class: "text-blue-400 font-bold" },
+          { text: "class", class: "text-blue-400 font-bold" },
+          { text: " HelloWorld {", class: "text-white" },
+          { text: "public static void", class: "text-blue-400 font-bold" },
+          { text: " main(String[] args) {", class: "text-white" },
+          { text: "System.out.println", class: "text-yellow-300 font-bold" },
+          { text: `("Hello, Java!");`, class: "text-red-400" },
+          { text: "}", class: "text-white" }
+        ]
+      },
+      {
+        language: "Flutter",
+        code: [
+          { text: "import", class: "text-blue-400 font-bold" },
+          { text: ` 'package:flutter/material.dart';`, class: "text-red-400" },
+          { text: "void", class: "text-blue-400 font-bold" },
+          { text: " main() {", class: "text-white" },
+          { text: "runApp", class: "text-yellow-300 font-bold" },
+          { text: `(MaterialApp(home: Scaffold(body: Center(child: Text`, class: "text-white" },
+          { text: `("Hello, Flutter!")))));`, class: "text-red-400" },
+          { text: "}", class: "text-white" }
+        ]
+      }
+    ];
+
+    // Elementos HTML
+    const languageElement = document.getElementById("language");
+    const codeElement = document.getElementById("code");
+    let currentSnippetIndex = 0;
+    let currentCharIndex = 0;
+
+    function typeCode() {
+      const currentSnippet = codeSnippets[currentSnippetIndex];
+      languageElement.textContent = currentSnippet.language;
+
+      if (currentCharIndex < currentSnippet.code.length) {
+        // Adiciona linha por linha
+        const line = currentSnippet.code[currentCharIndex];
+        const span = document.createElement("span");
+        span.className = line.class;
+        span.textContent = line.text + "\n";
+        codeElement.appendChild(span);
+
+        currentCharIndex++;
+        setTimeout(typeCode, 200);
+      } else {
+        // Pausa antes de trocar para o próximo código
+        setTimeout(() => {
+          currentCharIndex = 0;
+          currentSnippetIndex = (currentSnippetIndex + 1) % codeSnippets.length;
+          codeElement.innerHTML = "";
+          typeCode();
+        }, 3000);
+      }
+    }
+
+    // Inicia o efeito
+    typeCode();
+</script>
   <script type="module" src="./src/main.js"></script>
   <script src="asset/js/wow.min.js"></script>
   <script src="./asset/js/aos.js"></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.category');
+  const modal = document.getElementById('itemModal');
+  const modalImage = document.getElementById('modal-image');
+  const modalTitle = document.getElementById('modal-title');
+  const modalDescription = document.getElementById('modal-description');
+  const closeModal = document.getElementById('close-modal');
 
-      const filterButtons = document.querySelectorAll('.filter-btn');
-      const items = document.querySelectorAll('.category');
-      const modal = document.getElementById('itemModal');
-      const modalImage = document.getElementById('modal-image');
-      const modalTitle = document.getElementById('modal-title');
-      const modalDescription = document.getElementById('modal-description');
-      const closeModal = document.getElementById('close-modal');
+  // Função para ativar o botão
+  function activateButton(button) {
+    // Remover classes ativas de todos os botões
+    filterButtons.forEach(btn => {
+      btn.classList.remove('bg-primary', 'text-white');
+      btn.classList.add('bg-white', 'text-gray-900');
+    });
 
+    // Adicionar classes ao botão ativo
+    button.classList.add('bg-primary', 'text-white');
+    button.classList.remove('bg-white', 'text-gray-900');
+  }
 
-      // Filtro de categorias
-      filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          const category = button.id; // ID do botão corresponde à categoria
-          items.forEach(item => {
-            if (category === 'all' || item.classList.contains(category)) {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
-            }
-          });
-        });
-      });
-
-      // Abertura do modal
+  // Filtro de categorias
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.id; // ID do botão corresponde à categoria
+      activateButton(button); // Ativar botão clicado
       items.forEach(item => {
-        item.addEventListener('click', () => {
-          const imgSrc = item.querySelector('img').src;
-          const title = item.querySelector('img').alt;
-          const description = item.querySelector('img').dataset.description || 'Sem descrição disponível';
-
-          modalImage.src = imgSrc;
-          modalTitle.textContent = title;
-          modalDescription.textContent = description;
-
-          modal.classList.remove('hidden');
-        });
-      });
-
-      // Fechamento do modal
-      closeModal.addEventListener('click', () => {
-        modal.classList.add('hidden');
-      });
-
-      // Fechar modal ao clicar fora
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.classList.add('hidden');
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
         }
       });
     });
+  });
 
-    new WOW().init();
+  // Abertura do modal
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      const imgSrc = item.querySelector('img').src;
+      const title = item.querySelector('img').alt;
+      const description = item.querySelector('img').dataset.description || 'Sem descrição disponível';
+
+      modalImage.src = imgSrc;
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+
+      modal.classList.remove('hidden');
+    });
+  });
+
+  // Fechamento do modal
+  closeModal.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+
+  // Fechar modal ao clicar fora
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
+  });
+
+  // Ativar botão "Todas Categorias" e exibir todos os itens no carregamento
+  const allButton = document.getElementById('all');
+  if (allButton) {
+    activateButton(allButton);
+    items.forEach(item => (item.style.display = 'block'));
+  }
+});
+   new WOW().init();
     AOS.init();
 
   </script>

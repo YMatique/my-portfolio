@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Código Dinâmico</title>
+  <style>
+    /* Estilo do corpo */
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(145deg, #2c0349, #5b0b7a);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Courier New', Courier, monospace;
+      overflow: hidden;
+    }
+
+    /* Fundo com grid */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      background-image: 
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 20px 20px;
+      z-index: -1;
+    }
+
+    /* Efeito de blur colorido */
+    body::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, #ff6ec7, #5b0b7a, #2c0349);
+      filter: blur(100px);
+      opacity: 0.8;
+      z-index: -2;
+    }
+
+    /* Container do código */
+    .code-container {
+      position: relative;
+      padding: 20px;
+      background: rgba(30, 41, 59, 0.95); /* Fundo escuro */
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      width: 600px;
+      max-height: 80%;
+      overflow: hidden;
+      color: #E5E5E5;
+    }
+
+    /* Título da linguagem */
+    .language {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #22d3ee;
+      margin-bottom: 10px;
+    }
+
+    /* Código digitado */
+    #code {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    /* Cursor animado */
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 1rem;
+      background-color: #22d3ee;
+      animation: blink 0.6s steps(2, start) infinite;
+      vertical-align: bottom;
+    }
+
+    /* Estilos do código (VSCode) */
+    .keyword {
+      color: #569CD6; /* Azul */
+      font-weight: bold;
+    }
+
+    .function {
+      color: #DCDCAA; /* Amarelo */
+    }
+
+    .string {
+      color: #CE9178; /* Vermelho */
+    }
+
+    .variable {
+      color: #9CDCFE; /* Azul Claro */
+    }
+
+    .comment {
+      color: #6A9955; /* Verde */
+      font-style: italic;
+    }
+
+    @keyframes blink {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="code-container">
+    <div class="language" id="language"></div>
+    <div id="code"></div><span class="cursor"></span>
+  </div>
+
+  <script>
+    // Snippets de código com palavras-chave estilizadas
+    const codeSnippets = [
+      {
+        language: "PHP",
+        code: `
+<span class="comment">// Exibe uma mensagem</span>
+<span class="keyword">&lt;?php</span>
+<span class="function">echo</span> <span class="string">"Hello, PHP!"</span>;
+<span class="keyword">?&gt;</span>`
+      },
+      {
+        language: "JavaScript",
+        code: `
+<span class="comment">// Log no console</span>
+<span class="function">console.log</span>(<span class="string">"Hello, JavaScript!"</span>);`
+      },
+      {
+        language: "Java",
+        code: `
+<span class="keyword">public</span> class <span class="variable">HelloWorld</span> {
+  <span class="keyword">public static void</span> <span class="function">main</span>(String[] args) {
+    <span class="function">System.out.println</span>(<span class="string">"Hello, Java!"</span>);
+  }
+}`
+      },
+      {
+        language: "Flutter",
+        code: `
+<span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;
+
+<span class="keyword">void</span> main() {
+  <span class="function">runApp</span>(MaterialApp(
+    home: Scaffold(
+      body: Center(<span class="function">child</span>: Text(<span class="string">"Hello, Flutter!"</span>))
+    ),
+  ));
+}`
+      }
+    ];
+
+    // Elementos HTML
+    const languageElement = document.getElementById('language');
+    const codeElement = document.getElementById('code');
+
+    let currentSnippetIndex = 0;
+    let currentCharIndex = 0;
+
+    function typeCode() {
+      const currentSnippet = codeSnippets[currentSnippetIndex];
+      const fullText = currentSnippet.code;
+
+      // Define o nome da linguagem
+      languageElement.textContent = currentSnippet.language;
+
+      if (currentCharIndex < fullText.length) {
+        // Adiciona um caractere ao HTML
+        codeElement.innerHTML += fullText[currentCharIndex];
+        currentCharIndex++;
+        setTimeout(typeCode, 30);
+      } else {
+        // Após terminar, espera 2 segundos antes de trocar
+        setTimeout(() => {
+          currentCharIndex = 0;
+          currentSnippetIndex = (currentSnippetIndex + 1) % codeSnippets.length;
+          codeElement.innerHTML = ''; // Limpa o código
+          typeCode(); // Reinicia a tipagem
+        }, 2000);
+      }
+    }
+
+    // Inicia a tipagem
+    typeCode();
+  </script>
+</body>
+</html>
